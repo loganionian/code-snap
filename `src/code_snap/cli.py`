@@ -1,0 +1,13 @@
+import argparse
+from .main import generate_code_snippet
+
+def main():
+    parser = argparse.ArgumentParser(description='Generate code snippets based on queries.')
+    parser.add_argument('query', type=str, help='The developer query to generate a code snippet.')
+    args = parser.parse_args()
+
+    snippet = generate_code_snippet(args.query)
+    print("Generated Code Snippet:\n", snippet)
+
+if __name__ == '__main__':
+    main()
