@@ -1,0 +1,11 @@
+import unittest
+from code_snap.main import generate_code_snippet
+
+class TestCodeSnap(unittest.TestCase):
+    def test_generate_code_snippet(self):
+        query = "Write a Python function to reverse a string."
+        snippet = generate_code_snippet(query)
+        self.assertIn("def reverse_string", snippet)
+
+if __name__ == '__main__':
+    unittest.main()
