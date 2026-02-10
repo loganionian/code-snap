@@ -1,0 +1,10 @@
+import openai
+
+def generate_code_snippet(query):
+    """Generates a code snippet based on the developer's query using OpenAI API."""
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=query,
+        max_tokens=150
+    )
+    return response.choices[0].text.strip()
